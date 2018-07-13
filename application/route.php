@@ -9,7 +9,7 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-return [
+/*return [
     '__pattern__' => [
         'name' => '\w+',
     ],
@@ -18,4 +18,13 @@ return [
         ':name' => ['index/hello', ['method' => 'post']],
     ],
 
-];
+];*/
+
+/*rule($路由规则, 路由地址, 请求类型 = '*', 路由参数 = [], 变量规则 = [])
+Route::rule('hello','sample/index/index','GET',['https'=>false]);
+Route::rule('hello','sample/index/index','GET|POST',['https'=>false]);
+Route::post('hello/:id','sample/index/hello');*/
+
+use \think\Route;
+
+Route::get('banner/:id','api/v1.Banner/getBanner');
