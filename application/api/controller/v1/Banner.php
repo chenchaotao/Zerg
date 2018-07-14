@@ -23,12 +23,9 @@ class Banner extends Controller
     public function getBanner($id)
     {
         (new IdMustBePostiveInt())->goCheck($id);
-        try{
-            $banner = BannerModel::getBannerByID();
-        }catch (\Exception $e){
-            $err = ['a'=>1,'b'=>2];
-            return json($err,400);
-        }
+
+        $banner = BannerModel::getBannerByID();
+
         return $banner;
 
     }
