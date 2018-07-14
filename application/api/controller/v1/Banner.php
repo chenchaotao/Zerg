@@ -10,6 +10,7 @@ namespace app\api\controller\v1;
 
 use app\api\model\Banner as BannerModel;
 use app\api\validate\IdMustBePostiveInt;
+use app\lib\exception\BannerMissException;
 use think\Controller;
 
 class Banner extends Controller
@@ -22,10 +23,13 @@ class Banner extends Controller
      */
     public function getBanner($id)
     {
+        //AOP 面向切面编程
         (new IdMustBePostiveInt())->goCheck($id);
 
         $banner = BannerModel::getBannerByID();
-
+        if(!$banner){
+            throw new BannerMissException();
+        }
         return $banner;
 
     }

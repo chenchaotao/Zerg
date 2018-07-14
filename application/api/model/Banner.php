@@ -13,12 +13,6 @@ class Banner
 {
     public static function getBannerByID()
     {
-        try {
-            //TODO: 根据Banner ID号 获取Banner信息
-            $res = 1/0;
-            return 'this is banner info';
-        }catch (\Exception $e){
-            throw $e;
-        }
+        
     }
 }

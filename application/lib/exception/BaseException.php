@@ -10,6 +10,7 @@ namespace app\lib\exception;
 
 
 use think\Exception;
+use Throwable;
 
 class BaseException extends Exception
 {
@@ -21,4 +22,23 @@ class BaseException extends Exception
 
     //自定义错误状态码
     public $errorCode = 10000;
+
+    public function __construct($paramas = [])
+    {
+        if(!is_array($paramas)){
+            return;
+        }
+
+        if(array_key_exists('code',$paramas)){
+            $this->code = $paramas['code'];
+        }
+
+        if(array_key_exists('msg',$paramas)){
+            $this->msg = $paramas['msg'];
+        }
+
+        if(array_key_exists('errorCode',$paramas)){
+            $this->errorCode = $paramas['errorCode'];
+        }
+    }
 }
