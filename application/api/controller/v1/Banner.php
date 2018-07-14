@@ -26,7 +26,8 @@ class Banner extends Controller
         //AOP 面向切面编程
         (new IdMustBePostiveInt())->goCheck($id);
 
-        $banner = BannerModel::getBannerByID();
+//        $banner = BannerModel::getBannerByID($id);
+        $banner = BannerModel::get($id);
         if(!$banner){
             throw new BannerMissException();
         }
