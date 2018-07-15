@@ -17,4 +17,16 @@ class Product extends BaseModel
     {
         return $this->prefixImgUrl($value,$data);
     }
+
+    public static function products($count)
+    {
+        $products = self::limit($count)->order('create_time desc')->select();
+        return $products;
+    }
+
+    public static function getProductsByCategoryId($id)
+    {
+        $products = self::where('category_id','=',$id)->select();
+        return $products;
+    }
 }
