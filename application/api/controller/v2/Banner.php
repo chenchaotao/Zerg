@@ -6,7 +6,7 @@
  * Time: 8:49
  */
 
-namespace app\api\controller\v1;
+namespace app\api\controller\v2;
 
 use app\api\model\Banner as BannerModel;
 use app\api\validate\IdMustBePostiveInt;
@@ -23,14 +23,6 @@ class Banner extends Controller
      */
     public function getBanner($id)
     {
-        //AOP 面向切面编程
-        (new IdMustBePostiveInt())->goCheck($id);
-
-        $banner = BannerModel::getBannerByID($id);
-        if(!$banner){
-            throw new BannerMissException();
-        }
-        return $banner;
-
+        return 'this is 2.0 version';
     }
 }

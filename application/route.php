@@ -27,4 +27,9 @@ Route::post('hello/:id','sample/index/hello');*/
 
 use \think\Route;
 
-Route::get('api/v1/banner/:id','api/v1.Banner/getBanner');
+Route::get('api/:version/banner/:id','api/:version.Banner/getBanner');
+
+Route::get('api/:version/theme','api/:version.Theme/getSimpleList');
+
+Route::get('api/:version/theme/:id','api/:version.Theme/getComplexOne');
+
