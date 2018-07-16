@@ -35,4 +35,14 @@ class Product
         }
         return $produts;
     }
+
+    public function getOne($id)
+    {
+        (new IdMustBePostiveInt())->goCheck();
+        $product =ProductModel::getProductDetail($id);
+        if(!$product){
+            throw new ProductException();
+        }
+        return $product;
+    }
 }
