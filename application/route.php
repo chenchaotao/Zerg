@@ -33,7 +33,7 @@ Route::get('api/:version/theme','api/:version.Theme/getSimpleList');
 Route::get('api/:version/theme/:id','api/:version.Theme/getComplexOne');
 
 Route::get('api/:version/product/recent','api/:version.Product/getRecent',[],['id'=>'\d+']);
-Route::get('api/:version/by_category','api/:version.Product/getAllInCategory');
+Route::get('api/:version/product/by_category','api/:version.Product/getAllInCategory');
 Route::get('api/:version/product/:id','api/:version.Product/getOne');
 
 Route::get('api/:version/category/all','api/:version.Category/getAllCategorys');
@@ -43,6 +43,3 @@ Route::post('api/:version/token/user','api/:version.Token/getToken');
 Route::post('api/:version/address','api/:version.Address/createOrUpdateAddress');
 
 Route::post('api/:version/order','api/:version.Order/placeOrder');
-
-
-

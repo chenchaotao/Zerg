@@ -47,6 +47,7 @@ class Order
     //订单写入数据库
     private function createOrder($snap)
     {
+        Db::startTrans();
         try{
             $orderNo = self::makeOrderNo();
             $order = new OrderModel();
